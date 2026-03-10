@@ -1,0 +1,198 @@
+{
+  "Navbar": {
+    "links": {
+      "home": "Home",
+      "menu": "Menu",
+      "gallery": "Gallery",
+      "contact": "Contact"
+    },
+    "reserve": "Reserve",
+    "language": {
+      "en": "EN",
+      "fr": "FR"
+    },
+    "mobile": {
+      "toggleAriaLabel": "Toggle menu"
+    }
+  },
+  "Hero": {
+    "bgAlt": "Andromeda Restaurant — Italian cuisine",
+    "sideLeft": "LONDON",
+    "sideRight": "ITALIANO",
+    "eyebrow": "Est. 2019 · London",
+    "tagline": "Authentic Italian Flavors in the Heart of London",
+    "services": "Dine-in · Takeaway · Delivery",
+    "cta": {
+      "viewMenu": "View Menu",
+      "whatsApp": "WhatsApp",
+      "instagram": "Instagram"
+    },
+    "scroll": "Scroll"
+  },
+  "About": {
+    "eyebrow": "Our Story",
+    "title": {
+      "line1": "A Passion for",
+      "emphasis": "Authentic",
+      "line2": "Italian"
+    },
+    "p1": "At Andromeda, we bring authentic Italian cuisine to London with handcrafted pizzas, fresh pasta and traditional recipes made with passion. Every dish tells the story of Italy's rich culinary heritage.",
+    "p2": "Our chefs source the finest ingredients directly from Italian producers — San Marzano tomatoes, 00 flour, aged Parmigiano-Reggiano — crafting dishes that transport you straight to the streets of Naples and Rome.",
+    "stats": {
+      "years": "Years of Excellence",
+      "dishes": "Dishes on Menu",
+      "rating": "Guest Rating"
+    },
+    "imageAlt": "Chef at Andromeda preparing Italian cuisine",
+    "quote": {
+      "text": "\"Made with passion\"",
+      "author": "Chef Marco Rossi"
+    }
+  },
+  "FeaturedMenu": {
+    "eyebrow": "Our Cuisine",
+    "title": "Featured Dishes",
+    "subtitle": "Each dish is crafted with imported Italian ingredients and generations of culinary tradition.",
+    "categories": {
+      "all": "All",
+      "pizza": "Pizza",
+      "pasta": "Pasta",
+      "gnocchi": "Gnocchi",
+      "lasagne": "Lasagne"
+    },
+    "tags": {
+      "signature": "Signature",
+      "chefsPick": "Chef's Pick",
+      "classic": "Classic",
+      "seasonal": "Seasonal",
+      "houseSpecial": "House Special"
+    },
+    "dishes": {
+      "1": {
+        "category": "Pizza",
+        "name": "Margherita Classica",
+        "description": "San Marzano tomatoes, fior di latte mozzarella, fresh basil, extra virgin olive oil",
+        "price": "£14",
+        "tag": "Signature"
+      },
+      "2": {
+        "category": "Pizza",
+        "name": "Diavola Nera",
+        "description": "Squid ink dough, spicy 'nduja, mozzarella, roasted peppers, capers",
+        "price": "£17",
+        "tag": "Chef's Pick"
+      },
+      "3": {
+        "category": "Pasta",
+        "name": "Cacio e Pepe",
+        "description": "Tonnarelli pasta, aged Pecorino Romano, black pepper, butter",
+        "price": "£16",
+        "tag": "Classic"
+      },
+      "4": {
+        "category": "Pasta",
+        "name": "Tagliatelle al Tartufo",
+        "description": "Egg tagliatelle, black truffle, Parmigiano cream, wild mushrooms",
+        "price": "£22",
+        "tag": "Seasonal"
+      },
+      "5": {
+        "category": "Gnocchi",
+        "name": "Gnocchi alla Sorrentina",
+        "description": "Hand-rolled potato gnocchi, San Marzano tomato, fresh mozzarella, basil",
+        "price": "£15",
+        "tag": "Signature"
+      },
+      "6": {
+        "category": "Lasagne",
+        "name": "Lasagne della Nonna",
+        "description": "Slow-braised beef ragù, béchamel, aged Parmigiano, egg pasta sheets",
+        "price": "£18",
+        "tag": "House Special"
+      }
+    },
+    "cta": {
+      "eyebrow": "Discover the complete experience",
+      "viewFullMenu": "View Full Menu"
+    }
+  },
+  "Gallery": {
+    "eyebrow": "Visual Journey",
+    "title": "The Gallery",
+    "subtitle": "A visual feast. Every frame captures the art of Italian cooking.",
+    "images": {
+      "1": {
+        "alt": "Neapolitan pizza fresh from the wood-fired oven",
+        "caption": "Wood-fired Pizza"
+      },
+      "2": {
+        "alt": "Fresh pasta handmade in our kitchen",
+        "caption": "Fresh Pasta"
+      },
+      "3": {
+        "alt": "Traditional Italian gnocchi",
+        "caption": "Gnocchi"
+      },
+      "4": {
+        "alt": "Authentic Italian lasagne",
+        "caption": "Lasagne"
+      },
+      "5": {
+        "alt": "Elegant Italian dining ambiance",
+        "caption": "Our Ambiance"
+      },
+      "6": {
+        "alt": "Italian antipasti and starters",
+        "caption": "Antipasti"
+      }
+    }
+  },
+  "Contact": {
+    "eyebrow": "Find Us",
+    "title": "Visit Andromeda",
+    "cards": {
+      "address": {
+        "label": "Address",
+        "lines": ["25 rue de Birmingham", "London, UK"]
+      },
+      "hours": {
+        "label": "Hours",
+        "lines": ["Monday — Sunday", "12:00 – 23:00"]
+      },
+      "services": {
+        "label": "Services",
+        "lines": ["Dine-in", "Takeaway · Delivery"]
+      }
+    },
+    "cta": {
+      "orderWhatsapp": "Order on WhatsApp",
+      "followUs": "Follow Us"
+    }
+  },
+  "Footer": {
+    "description": "Authentic Italian cuisine crafted with passion in the heart of London. Handcrafted pizzas, fresh pasta, traditional recipes.",
+    "sections": {
+      "location": "Location",
+      "hours": "Hours"
+    },
+    "location": {
+      "line1": "25 rue de Birmingham",
+      "line2": "London, UK"
+    },
+    "hours": {
+      "line1": "Monday — Sunday",
+      "line2": "12:00 – 23:00",
+      "line3": "Dine-in · Takeaway · Delivery"
+    },
+    "copyright": "© {year} Andromeda Restaurant. All rights reserved.",
+    "links": {
+      "privacy": "Privacy Policy",
+      "terms": "Terms"
+    },
+    "social": {
+      "whatsapp": "WhatsApp",
+      "instagram": "Instagram"
+    }
+  }
+}
+

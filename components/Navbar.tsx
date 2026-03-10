@@ -1,25 +1,37 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Link from "next/link";
+import {usePathname, useRouter} from "next/navigation";
+import {useLocale, useTranslations} from "next-intl";
 
 const navLinks = [
-  { label: "Home", href: "#home" },
-  { label: "Menu", href: "#menu" },
-  { label: "Gallery", href: "#gallery" },
-  { label: "Contact", href: "#contact" },
-];
+  { key: "home", href: "#home" },
+  { key: "menu", href: "#menu" },
+  { key: "gallery", href: "#gallery" },
+  { key: "contact", href: "#contact" },
+] as const;
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [lang, setLang] = useState<"EN" | "FR">("EN");
+  const t = useTranslations("Navbar");
+  const locale = useLocale();
+  const router = useRouter();
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 40);
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const goToLocale = (nextLocale: "en" | "fr") => {
+    const hash = window.location.hash ?? "";
+    const rest =
+      pathname === `/${locale}` ? "" : pathname.replace(new RegExp(`^/${locale}`), "");
+
+    router.push(`/${nextLocale}${rest}${hash}`);
+  };
 
   const handleNavClick = (href: string) => {
     setMenuOpen(false);
@@ -50,12 +62,12 @@ export default function Navbar() {
           <div className="hidden md:flex items-center gap-10">
             {navLinks.map((link) => (
               <a
-                key={link.label}
+                key={link.key}
                 href={link.href}
                 onClick={(e) => { e.preventDefault(); handleNavClick(link.href); }}
                 className="font-sans text-xs tracking-widest text-warm-white/70 hover:text-gold uppercase transition-colors duration-300 relative group"
               >
-                {link.label}
+                {t(`links.${link.key}`)}
                 <span className="absolute -bottom-1 left-0 w-0 h-px bg-gold transition-all duration-300 group-hover:w-full" />
               </a>
             ))}
@@ -66,17 +78,17 @@ export default function Navbar() {
             {/* Lang switcher */}
             <div className="flex items-center gap-1 text-xs tracking-wider">
               <button
-                onClick={() => setLang("EN")}
-                className={`transition-colors duration-200 px-1 ${lang === "EN" ? "text-gold" : "text-warm-white/40 hover:text-warm-white/70"}`}
+                onClick={() => goToLocale("en")}
+                className={`transition-colors duration-200 px-1 ${locale === "en" ? "text-gold" : "text-warm-white/40 hover:text-warm-white/70"}`}
               >
-                EN
+                {t("language.en")}
               </button>
               <span className="text-warm-white/20">|</span>
               <button
-                onClick={() => setLang("FR")}
-                className={`transition-colors duration-200 px-1 ${lang === "FR" ? "text-gold" : "text-warm-white/40 hover:text-warm-white/70"}`}
+                onClick={() => goToLocale("fr")}
+                className={`transition-colors duration-200 px-1 ${locale === "fr" ? "text-gold" : "text-warm-white/40 hover:text-warm-white/70"}`}
               >
-                FR
+                {t("language.fr")}
               </button>
             </div>
 
@@ -85,7 +97,7 @@ export default function Navbar() {
               onClick={(e) => { e.preventDefault(); handleNavClick("#menu"); }}
               className="border border-gold/40 text-gold text-xs tracking-widest uppercase px-5 py-2.5 hover:bg-gold hover:text-charcoal transition-all duration-300 font-sans"
             >
-              Reserve
+              {t("reserve")}
             </a>
           </div>
 
@@ -93,7 +105,7 @@ export default function Navbar() {
           <button
             onClick={() => setMenuOpen(!menuOpen)}
             className="md:hidden flex flex-col gap-1.5 p-2 group"
-            aria-label="Toggle menu"
+            aria-label={t("mobile.toggleAriaLabel")}
           >
             <span className={`block w-6 h-px bg-warm-white/80 transition-all duration-300 origin-center ${menuOpen ? "rotate-45 translate-y-2.5" : ""}`} />
             <span className={`block w-4 h-px bg-warm-white/80 transition-all duration-300 ${menuOpen ? "opacity-0 w-0" : ""}`} />
@@ -111,25 +123,25 @@ export default function Navbar() {
         <div className="flex flex-col items-center gap-8">
           {navLinks.map((link, i) => (
             <a
-              key={link.label}
+              key={link.key}
               href={link.href}
               onClick={(e) => { e.preventDefault(); handleNavClick(link.href); }}
               className="font-display text-3xl font-light text-warm-white/80 hover:text-gold transition-all duration-300 tracking-widest"
               style={{ transitionDelay: menuOpen ? `${i * 60}ms` : "0ms" }}
             >
-              {link.label}
+              {t(`links.${link.key}`)}
             </a>
           ))}
           <div className="mt-6 flex items-center gap-3 text-sm tracking-wider">
             <button
-              onClick={() => setLang("EN")}
-              className={`transition-colors px-2 ${lang === "EN" ? "text-gold" : "text-warm-white/40"}`}
-            >EN</button>
+              onClick={() => goToLocale("en")}
+              className={`transition-colors px-2 ${locale === "en" ? "text-gold" : "text-warm-white/40"}`}
+            >{t("language.en")}</button>
             <span className="text-warm-white/20">|</span>
             <button
-              onClick={() => setLang("FR")}
-              className={`transition-colors px-2 ${lang === "FR" ? "text-gold" : "text-warm-white/40"}`}
-            >FR</button>
+              onClick={() => goToLocale("fr")}
+              className={`transition-colors px-2 ${locale === "fr" ? "text-gold" : "text-warm-white/40"}`}
+            >{t("language.fr")}</button>
           </div>
         </div>
       </div>

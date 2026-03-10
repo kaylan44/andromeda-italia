@@ -1,5 +1,8 @@
-export default function Footer() {
+import {getTranslations} from "next-intl/server";
+
+export default async function Footer() {
   const year = new Date().getFullYear();
+  const t = await getTranslations("Footer");
 
   return (
     <footer className="relative bg-black border-t border-white/5">
@@ -16,15 +19,14 @@ export default function Footer() {
             </div>
             <div className="w-8 h-px bg-gold/50 mb-5" />
             <p className="font-sans text-warm-white/35 text-sm leading-relaxed font-light max-w-xs">
-              Authentic Italian cuisine crafted with passion in the heart of London. 
-              Handcrafted pizzas, fresh pasta, traditional recipes.
+              {t("description")}
             </p>
 
             {/* Social links */}
             <div className="flex items-center gap-4 mt-7">
               {[
                 {
-                  label: "WhatsApp",
+                  label: t("social.whatsapp"),
                   href: "https://wa.me/447000000000",
                   icon: (
                     <svg viewBox="0 0 24 24" className="w-4 h-4 fill-current">
@@ -33,7 +35,7 @@ export default function Footer() {
                   ),
                 },
                 {
-                  label: "Instagram",
+                  label: t("social.instagram"),
                   href: "https://instagram.com/andromeda",
                   icon: (
                     <svg viewBox="0 0 24 24" className="w-4 h-4 fill-current">
@@ -58,19 +60,19 @@ export default function Footer() {
 
           {/* Info */}
           <div>
-            <h4 className="font-sans text-xs tracking-widest uppercase text-gold mb-6">Location</h4>
+            <h4 className="font-sans text-xs tracking-widest uppercase text-gold mb-6">{t("sections.location")}</h4>
             <div className="font-sans text-warm-white/40 text-sm leading-loose font-light">
-              <p>25 rue de Birmingham</p>
-              <p>London, UK</p>
+              <p>{t("location.line1")}</p>
+              <p>{t("location.line2")}</p>
             </div>
           </div>
 
           <div>
-            <h4 className="font-sans text-xs tracking-widest uppercase text-gold mb-6">Hours</h4>
+            <h4 className="font-sans text-xs tracking-widest uppercase text-gold mb-6">{t("sections.hours")}</h4>
             <div className="font-sans text-warm-white/40 text-sm leading-loose font-light">
-              <p>Monday — Sunday</p>
-              <p>12:00 – 23:00</p>
-              <p className="mt-3 text-warm-white/25 text-xs">Dine-in · Takeaway · Delivery</p>
+              <p>{t("hours.line1")}</p>
+              <p>{t("hours.line2")}</p>
+              <p className="mt-3 text-warm-white/25 text-xs">{t("hours.line3")}</p>
             </div>
           </div>
 
@@ -79,12 +81,12 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="pt-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="font-sans text-warm-white/20 text-xs tracking-wider">
-            © {year} Andromeda Restaurant. All rights reserved.
+            {t("copyright", {year})}
           </p>
           <div className="flex items-center gap-6 text-warm-white/20 text-xs tracking-wider">
-            <a href="#" className="hover:text-warm-white/50 transition-colors">Privacy Policy</a>
+            <a href="#" className="hover:text-warm-white/50 transition-colors">{t("links.privacy")}</a>
             <span>·</span>
-            <a href="#" className="hover:text-warm-white/50 transition-colors">Terms</a>
+            <a href="#" className="hover:text-warm-white/50 transition-colors">{t("links.terms")}</a>
           </div>
         </div>
       </div>

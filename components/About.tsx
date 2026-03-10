@@ -2,10 +2,12 @@
 
 import { useRef, useEffect, useState } from "react";
 import Image from "next/image";
+import {useTranslations} from "next-intl";
 
 export default function About() {
   const sectionRef = useRef<HTMLElement>(null);
   const [visible, setVisible] = useState(false);
+  const t = useTranslations("About");
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -35,30 +37,30 @@ export default function About() {
           <div className={`transition-all duration-1000 ${visible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-10"}`}>
             <div className="flex items-center gap-4 mb-8">
               <div className="w-8 h-px bg-gold/60" />
-              <span className="text-gold text-xs tracking-widest2 uppercase font-sans">Our Story</span>
+              <span className="text-gold text-xs tracking-widest2 uppercase font-sans">{t("eyebrow")}</span>
             </div>
 
             <h2 className="font-display text-[clamp(2.5rem,5vw,4.5rem)] font-light leading-[1.1] text-warm-white mb-8 tracking-wide">
-              A Passion for<br />
-              <em className="text-gold font-light">Authentic</em> Italian
+              {t("title.line1")}<br />
+              <em className="text-gold font-light">{t("title.emphasis")}</em> {t("title.line2")}
             </h2>
 
             <div className="w-16 h-px bg-gradient-to-r from-gold/60 to-transparent mb-8" />
 
             <p className="font-sans text-warm-white/60 text-base leading-relaxed mb-6 font-light">
-              At Andromeda, we bring authentic Italian cuisine to London with handcrafted pizzas, fresh pasta and traditional recipes made with passion. Every dish tells the story of Italy's rich culinary heritage.
+              {t("p1")}
             </p>
 
             <p className="font-sans text-warm-white/50 text-base leading-relaxed mb-10 font-light">
-              Our chefs source the finest ingredients directly from Italian producers — San Marzano tomatoes, 00 flour, aged Parmigiano-Reggiano — crafting dishes that transport you straight to the streets of Naples and Rome.
+              {t("p2")}
             </p>
 
             {/* Stats row */}
             <div className="grid grid-cols-3 gap-6 pt-10 border-t border-white/5">
               {[
-                { num: "5+", label: "Years of Excellence" },
-                { num: "80+", label: "Dishes on Menu" },
-                { num: "4.9", label: "Guest Rating" },
+                { num: "5+", label: t("stats.years") },
+                { num: "80+", label: t("stats.dishes") },
+                { num: "4.9", label: t("stats.rating") },
               ].map((stat) => (
                 <div key={stat.label}>
                   <div className="font-display text-3xl text-gold font-light mb-1">{stat.num}</div>
@@ -75,7 +77,7 @@ export default function About() {
               <div className="relative aspect-[4/5] overflow-hidden">
                 <Image
                   src="/images/about-main.jpg"
-                  alt="Chef at Andromeda preparing Italian cuisine"
+                  alt={t("imageAlt")}
                   fill
                   className="object-cover transition-transform duration-700 hover:scale-105"
                   sizes="(max-width: 1024px) 100vw, 50vw"
@@ -92,8 +94,8 @@ export default function About() {
                     </svg>
                   </div>
                   <div>
-                    <div className="font-display text-warm-white text-sm italic">"Made with passion"</div>
-                    <div className="font-sans text-warm-white/40 text-xs tracking-wider mt-0.5">Chef Marco Rossi</div>
+                    <div className="font-display text-warm-white text-sm italic">{t("quote.text")}</div>
+                    <div className="font-sans text-warm-white/40 text-xs tracking-wider mt-0.5">{t("quote.author")}</div>
                   </div>
                 </div>
               </div>

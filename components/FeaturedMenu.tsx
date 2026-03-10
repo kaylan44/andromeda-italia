@@ -2,70 +2,24 @@
 
 import { useRef, useEffect, useState } from "react";
 import Image from "next/image";
+import {useTranslations} from "next-intl";
 
-const menuCategories = ["All", "Pizza", "Pasta", "Gnocchi", "Lasagne"];
+const menuCategories = ["all", "pizza", "pasta", "gnocchi", "lasagne"] as const;
 
 const dishes = [
-  {
-    id: 1,
-    category: "Pizza",
-    name: "Margherita Classica",
-    description: "San Marzano tomatoes, fior di latte mozzarella, fresh basil, extra virgin olive oil",
-    price: "£14",
-    image: "/images/dish-1.jpg",
-    tag: "Signature",
-  },
-  {
-    id: 2,
-    category: "Pizza",
-    name: "Diavola Nera",
-    description: "Squid ink dough, spicy 'nduja, mozzarella, roasted peppers, capers",
-    price: "£17",
-    image: "/images/dish-2.jpg",
-    tag: "Chef's Pick",
-  },
-  {
-    id: 3,
-    category: "Pasta",
-    name: "Cacio e Pepe",
-    description: "Tonnarelli pasta, aged Pecorino Romano, black pepper, butter",
-    price: "£16",
-    image: "/images/dish-3.jpg",
-    tag: "Classic",
-  },
-  {
-    id: 4,
-    category: "Pasta",
-    name: "Tagliatelle al Tartufo",
-    description: "Egg tagliatelle, black truffle, Parmigiano cream, wild mushrooms",
-    price: "£22",
-    image: "/images/dish-4.jpg",
-    tag: "Seasonal",
-  },
-  {
-    id: 5,
-    category: "Gnocchi",
-    name: "Gnocchi alla Sorrentina",
-    description: "Hand-rolled potato gnocchi, San Marzano tomato, fresh mozzarella, basil",
-    price: "£15",
-    image: "/images/dish-5.jpg",
-    tag: "Signature",
-  },
-  {
-    id: 6,
-    category: "Lasagne",
-    name: "Lasagne della Nonna",
-    description: "Slow-braised beef ragù, béchamel, aged Parmigiano, egg pasta sheets",
-    price: "£18",
-    image: "/images/dish-6.jpg",
-    tag: "House Special",
-  },
-];
+  { id: 1, image: "/images/dish-1.jpg", category: "pizza" },
+  { id: 2, image: "/images/dish-2.jpg", category: "pizza" },
+  { id: 3, image: "/images/dish-3.jpg", category: "pasta" },
+  { id: 4, image: "/images/dish-4.jpg", category: "pasta" },
+  { id: 5, image: "/images/dish-5.jpg", category: "gnocchi" },
+  { id: 6, image: "/images/dish-6.jpg", category: "lasagne" },
+] as const;
 
 export default function FeaturedMenu() {
   const sectionRef = useRef<HTMLElement>(null);
   const [visible, setVisible] = useState(false);
-  const [activeCategory, setActiveCategory] = useState("All");
+  const [activeCategory, setActiveCategory] = useState<(typeof menuCategories)[number]>("all");
+  const t = useTranslations("FeaturedMenu");
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -77,7 +31,7 @@ export default function FeaturedMenu() {
   }, []);
 
   const filteredDishes =
-    activeCategory === "All"
+    activeCategory === "all"
       ? dishes
       : dishes.filter((d) => d.category === activeCategory);
 
@@ -96,14 +50,14 @@ export default function FeaturedMenu() {
         <div className={`text-center mb-16 transition-all duration-1000 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
           <div className="flex items-center justify-center gap-4 mb-6">
             <div className="w-8 h-px bg-gold/60" />
-            <span className="text-gold text-xs tracking-widest2 uppercase font-sans">Our Cuisine</span>
+            <span className="text-gold text-xs tracking-widest2 uppercase font-sans">{t("eyebrow")}</span>
             <div className="w-8 h-px bg-gold/60" />
           </div>
           <h2 className="font-display text-[clamp(2.5rem,5vw,4.5rem)] font-light text-warm-white tracking-wide mb-4">
-            Featured Dishes
+            {t("title")}
           </h2>
           <p className="font-sans text-warm-white/40 text-sm max-w-md mx-auto font-light">
-            Each dish is crafted with imported Italian ingredients and generations of culinary tradition.
+            {t("subtitle")}
           </p>
         </div>
 
@@ -119,7 +73,7 @@ export default function FeaturedMenu() {
                   : "border-white/10 text-warm-white/50 hover:border-gold/40 hover:text-warm-white/80"
               }`}
             >
-              {cat}
+              {t(`categories.${cat}`)}
             </button>
           ))}
         </div>
@@ -138,7 +92,7 @@ export default function FeaturedMenu() {
               <div className="relative h-56 overflow-hidden">
                 <Image
                   src={dish.image}
-                  alt={dish.name}
+                  alt={t(`dishes.${dish.id}.name`)}
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-108"
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
@@ -147,12 +101,12 @@ export default function FeaturedMenu() {
 
                 {/* Tag badge */}
                 <div className="absolute top-4 left-4 bg-black/60 backdrop-blur-sm border border-gold/30 px-3 py-1">
-                  <span className="text-gold text-xs tracking-wider font-sans">{dish.tag}</span>
+                  <span className="text-gold text-xs tracking-wider font-sans">{t(`dishes.${dish.id}.tag`)}</span>
                 </div>
 
                 {/* Category */}
                 <div className="absolute top-4 right-4 text-warm-white/50 text-xs tracking-widest font-sans uppercase">
-                  {dish.category}
+                  {t(`dishes.${dish.id}.category`)}
                 </div>
               </div>
 
@@ -160,13 +114,13 @@ export default function FeaturedMenu() {
               <div className="p-6">
                 <div className="flex items-start justify-between mb-3">
                   <h3 className="font-display text-xl font-light text-warm-white leading-tight group-hover:text-gold transition-colors duration-300">
-                    {dish.name}
+                    {t(`dishes.${dish.id}.name`)}
                   </h3>
-                  <span className="font-serif text-gold text-lg font-light ml-4 flex-shrink-0">{dish.price}</span>
+                  <span className="font-serif text-gold text-lg font-light ml-4 flex-shrink-0">{t(`dishes.${dish.id}.price`)}</span>
                 </div>
 
                 <p className="font-sans text-warm-white/45 text-sm leading-relaxed font-light">
-                  {dish.description}
+                  {t(`dishes.${dish.id}.description`)}
                 </p>
 
                 {/* Hover line */}
@@ -180,7 +134,7 @@ export default function FeaturedMenu() {
         <div className={`text-center mt-16 transition-all duration-1000 delay-500 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>
           <div className="inline-flex flex-col items-center gap-4">
             <p className="font-sans text-warm-white/40 text-xs tracking-widest uppercase">
-              Discover the complete experience
+              {t("cta.eyebrow")}
             </p>
             <a
               href="/menu.pdf"
@@ -188,7 +142,7 @@ export default function FeaturedMenu() {
               rel="noopener noreferrer"
               className="group flex items-center gap-4 border border-gold/50 text-gold text-xs font-sans tracking-widest uppercase px-10 py-4 hover:bg-gold hover:text-charcoal transition-all duration-300"
             >
-              <span>View Full Menu</span>
+              <span>{t("cta.viewFullMenu")}</span>
               <svg className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>

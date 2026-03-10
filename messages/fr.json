@@ -1,0 +1,197 @@
+{
+  "Navbar": {
+    "links": {
+      "home": "Accueil",
+      "menu": "Menu",
+      "gallery": "Galerie",
+      "contact": "Contact"
+    },
+    "reserve": "Réserver",
+    "language": {
+      "en": "EN",
+      "fr": "FR"
+    },
+    "mobile": {
+      "toggleAriaLabel": "Afficher le menu"
+    }
+  },
+  "Hero": {
+    "bgAlt": "Restaurant Andromeda — cuisine italienne",
+    "sideLeft": "LONDRES",
+    "sideRight": "ITALIANO",
+    "eyebrow": "Depuis 2019 · Londres",
+    "tagline": "Les Saveurs Authentiques de l’Italie au Cœur de Londres",
+    "services": "Sur place · À emporter · Livraison",
+    "cta": {
+      "viewMenu": "Voir le Menu",
+      "whatsApp": "WhatsApp",
+      "instagram": "Instagram"
+    },
+    "scroll": "Faire défiler"
+  },
+  "About": {
+    "eyebrow": "Notre Histoire",
+    "title": {
+      "line1": "Une Passion pour la",
+      "emphasis": "Véritable",
+      "line2": "Cuisine Italienne"
+    },
+    "p1": "Chez Andromeda, nous apportons l’authentique cuisine italienne à Londres à travers des pizzas artisanales, des pâtes fraîches et des recettes traditionnelles préparées avec passion. Chaque plat raconte l’histoire du riche patrimoine culinaire italien.",
+    "p2": "Nos chefs sélectionnent les meilleurs ingrédients directement auprès de producteurs italiens — tomates San Marzano, farine 00, Parmigiano-Reggiano affiné — afin de créer des plats qui vous transportent au cœur des rues de Naples et de Rome.",
+    "stats": {
+      "years": "Années d’Excellence",
+      "dishes": "Plats à la Carte",
+      "rating": "Note des Clients"
+    },
+    "imageAlt": "Chef du restaurant Andromeda préparant une spécialité italienne",
+    "quote": {
+      "text": "\"Préparé avec passion\"",
+      "author": "Chef Marco Rossi"
+    }
+  },
+  "FeaturedMenu": {
+    "eyebrow": "Notre Cuisine",
+    "title": "Plats Signature",
+    "subtitle": "Chaque plat est élaboré avec des ingrédients importés d’Italie et un savoir-faire transmis de génération en génération.",
+    "categories": {
+      "all": "Tout",
+      "pizza": "Pizza",
+      "pasta": "Pâtes",
+      "gnocchi": "Gnocchi",
+      "lasagne": "Lasagnes"
+    },
+    "tags": {
+      "signature": "Signature",
+      "chefsPick": "Choix du Chef",
+      "classic": "Classique",
+      "seasonal": "De Saison",
+      "houseSpecial": "Spécialité de la Maison"
+    },
+    "dishes": {
+      "1": {
+        "category": "Pizza",
+        "name": "Margherita Classica",
+        "description": "Tomates San Marzano, mozzarella fior di latte, basilic frais, huile d’olive extra vierge",
+        "price": "£14",
+        "tag": "Signature"
+      },
+      "2": {
+        "category": "Pizza",
+        "name": "Diavola Nera",
+        "description": "Pâte à l’encre de seiche, 'nduja épicée, mozzarella, poivrons rôtis, câpres",
+        "price": "£17",
+        "tag": "Choix du Chef"
+      },
+      "3": {
+        "category": "Pasta",
+        "name": "Cacio e Pepe",
+        "description": "Pâtes tonnarelli, Pecorino Romano affiné, poivre noir, beurre",
+        "price": "£16",
+        "tag": "Classique"
+      },
+      "4": {
+        "category": "Pasta",
+        "name": "Tagliatelle al Tartufo",
+        "description": "Tagliatelles aux œufs, truffe noire, crème de Parmigiano, champignons sauvages",
+        "price": "£22",
+        "tag": "De Saison"
+      },
+      "5": {
+        "category": "Gnocchi",
+        "name": "Gnocchi alla Sorrentina",
+        "description": "Gnocchi de pommes de terre faits à la main, tomate San Marzano, mozzarella fraîche, basilic",
+        "price": "£15",
+        "tag": "Signature"
+      },
+      "6": {
+        "category": "Lasagne",
+        "name": "Lasagne della Nonna",
+        "description": "Ragù de bœuf mijoté, béchamel, Parmigiano affiné, feuilles de pâtes aux œufs",
+        "price": "£18",
+        "tag": "Spécialité de la Maison"
+      }
+    },
+    "cta": {
+      "eyebrow": "Découvrez l’expérience complète",
+      "viewFullMenu": "Voir le Menu Complet"
+    }
+  },
+  "Gallery": {
+    "eyebrow": "Voyage Visuel",
+    "title": "La Galerie",
+    "subtitle": "Un festin pour les yeux. Chaque image capture l’art de la cuisine italienne.",
+    "images": {
+      "1": {
+        "alt": "Pizza napolitaine fraîchement sortie du four à bois",
+        "caption": "Pizza au Four à Bois"
+      },
+      "2": {
+        "alt": "Pâtes fraîches faites à la main dans notre cuisine",
+        "caption": "Pâtes Fraîches"
+      },
+      "3": {
+        "alt": "Gnocchi italiens traditionnels",
+        "caption": "Gnocchi"
+      },
+      "4": {
+        "alt": "Lasagnes italiennes authentiques",
+        "caption": "Lasagnes"
+      },
+      "5": {
+        "alt": "Ambiance élégante d’un restaurant italien",
+        "caption": "Notre Ambiance"
+      },
+      "6": {
+        "alt": "Antipasti et entrées italiennes",
+        "caption": "Antipasti"
+      }
+    }
+  },
+  "Contact": {
+    "eyebrow": "Nous Trouver",
+    "title": "Visitez Andromeda",
+    "cards": {
+      "address": {
+        "label": "Adresse",
+        "lines": ["25 rue de Birmingham", "Londres, Royaume-Uni"]
+      },
+      "hours": {
+        "label": "Horaires",
+        "lines": ["Lundi — Dimanche", "12:00 – 23:00"]
+      },
+      "services": {
+        "label": "Services",
+        "lines": ["Sur place", "À emporter · Livraison"]
+      }
+    },
+    "cta": {
+      "orderWhatsapp": "Commander sur WhatsApp",
+      "followUs": "Nous Suivre"
+    }
+  },
+  "Footer": {
+    "description": "Cuisine italienne authentique élaborée avec passion au cœur de Londres. Pizzas artisanales, pâtes fraîches et recettes traditionnelles.",
+    "sections": {
+      "location": "Adresse",
+      "hours": "Horaires"
+    },
+    "location": {
+      "line1": "25 rue de Birmingham",
+      "line2": "Londres, Royaume-Uni"
+    },
+    "hours": {
+      "line1": "Lundi — Dimanche",
+      "line2": "12:00 – 23:00",
+      "line3": "Sur place · À emporter · Livraison"
+    },
+    "copyright": "© {year} Andromeda Restaurant. Tous droits réservés.",
+    "links": {
+      "privacy": "Politique de Confidentialité",
+      "terms": "Conditions"
+    },
+    "social": {
+      "whatsapp": "WhatsApp",
+      "instagram": "Instagram"
+    }
+  }
+}

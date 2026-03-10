@@ -2,48 +2,37 @@
 
 import { useRef, useEffect, useState } from "react";
 import Image from "next/image";
+import {useTranslations} from "next-intl";
 
 const galleryImages = [
   {
     id: 1,
     src: "/images/gallery-1.jpg",
-    alt: "Neapolitan pizza fresh from the wood-fired oven",
-    caption: "Wood-fired Pizza",
     span: "col-span-2 row-span-2",
   },
   {
     id: 2,
     src: "/images/gallery-2.jpg",
-    alt: "Fresh pasta handmade in our kitchen",
-    caption: "Fresh Pasta",
     span: "",
   },
   {
     id: 3,
     src: "/images/gallery-3.jpg",
-    alt: "Traditional Italian gnocchi",
-    caption: "Gnocchi",
     span: "",
   },
   {
     id: 4,
     src: "/images/gallery-4.jpg",
-    alt: "Authentic Italian lasagne",
-    caption: "Lasagne",
     span: "",
   },
   {
     id: 5,
     src: "/images/gallery-5.jpg",
-    alt: "Elegant Italian dining ambiance",
-    caption: "Our Ambiance",
     span: "",
   },
   {
     id: 6,
     src: "/images/gallery-6.jpg",
-    alt: "Italian antipasti and starters",
-    caption: "Antipasti",
     span: "col-span-2",
   },
 ];
@@ -52,6 +41,7 @@ export default function Gallery() {
   const sectionRef = useRef<HTMLElement>(null);
   const [visible, setVisible] = useState(false);
   const [lightbox, setLightbox] = useState<{ src: string; alt: string } | null>(null);
+  const t = useTranslations("Gallery");
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -85,14 +75,14 @@ export default function Gallery() {
           <div className={`text-center mb-16 transition-all duration-1000 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
             <div className="flex items-center justify-center gap-4 mb-6">
               <div className="w-8 h-px bg-gold/60" />
-              <span className="text-gold text-xs tracking-widest2 uppercase font-sans">Visual Journey</span>
+              <span className="text-gold text-xs tracking-widest2 uppercase font-sans">{t("eyebrow")}</span>
               <div className="w-8 h-px bg-gold/60" />
             </div>
             <h2 className="font-display text-[clamp(2.5rem,5vw,4.5rem)] font-light text-warm-white tracking-wide mb-4">
-              The Gallery
+              {t("title")}
             </h2>
             <p className="font-sans text-warm-white/40 text-sm max-w-sm mx-auto font-light">
-              A visual feast. Every frame captures the art of Italian cooking.
+              {t("subtitle")}
             </p>
           </div>
 
@@ -101,7 +91,7 @@ export default function Gallery() {
             {galleryImages.map((img, i) => (
               <div
                 key={img.id}
-                onClick={() => setLightbox({ src: img.src, alt: img.alt })}
+                onClick={() => setLightbox({ src: img.src, alt: t(`images.${img.id}.alt`) })}
                 className={`group relative overflow-hidden cursor-pointer ${img.span} transition-all duration-700 ${
                   visible ? "opacity-100 scale-100" : "opacity-0 scale-95"
                 }`}
@@ -109,7 +99,7 @@ export default function Gallery() {
               >
                 <Image
                   src={img.src}
-                  alt={img.alt}
+                  alt={t(`images.${img.id}.alt`)}
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-110"
                   sizes="(max-width: 768px) 50vw, 25vw"
@@ -122,7 +112,7 @@ export default function Gallery() {
                 <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-500">
                   <div className="flex items-center gap-2">
                     <div className="w-4 h-px bg-gold" />
-                    <span className="font-sans text-warm-white text-xs tracking-widest uppercase">{img.caption}</span>
+                    <span className="font-sans text-warm-white text-xs tracking-widest uppercase">{t(`images.${img.id}.caption`)}</span>
                   </div>
                 </div>
 
