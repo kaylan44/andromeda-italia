@@ -74,7 +74,7 @@ export default function About() {
               {/* Main image */}
               <div className="relative aspect-[4/5] overflow-hidden">
                 <Image
-                  src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=900&q=85&auto=format"
+                  src="/images/about-main.jpg"
                   alt="Chef at Andromeda preparing Italian cuisine"
                   fill
                   className="object-cover transition-transform duration-700 hover:scale-105"

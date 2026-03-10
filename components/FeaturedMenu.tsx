@@ -12,7 +12,7 @@ const dishes = [
     name: "Margherita Classica",
     description: "San Marzano tomatoes, fior di latte mozzarella, fresh basil, extra virgin olive oil",
     price: "£14",
-    image: "https://images.unsplash.com/photo-1604068549290-dea0e4a305ca?w=600&q=85&auto=format",
+    image: "/images/dish-1.jpg",
     tag: "Signature",
   },
   {
@@ -21,7 +21,7 @@ const dishes = [
     name: "Diavola Nera",
     description: "Squid ink dough, spicy 'nduja, mozzarella, roasted peppers, capers",
     price: "£17",
-    image: "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=600&q=85&auto=format",
+    image: "/images/dish-2.jpg",
     tag: "Chef's Pick",
   },
   {
@@ -30,7 +30,7 @@ const dishes = [
     name: "Cacio e Pepe",
     description: "Tonnarelli pasta, aged Pecorino Romano, black pepper, butter",
     price: "£16",
-    image: "https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=600&q=85&auto=format",
+    image: "/images/dish-3.jpg",
     tag: "Classic",
   },
   {
@@ -39,7 +39,7 @@ const dishes = [
     name: "Tagliatelle al Tartufo",
     description: "Egg tagliatelle, black truffle, Parmigiano cream, wild mushrooms",
     price: "£22",
-    image: "https://images.unsplash.com/photo-1473093295043-cdd812d0e601?w=600&q=85&auto=format",
+    image: "/images/dish-4.jpg",
     tag: "Seasonal",
   },
   {
@@ -48,7 +48,7 @@ const dishes = [
     name: "Gnocchi alla Sorrentina",
     description: "Hand-rolled potato gnocchi, San Marzano tomato, fresh mozzarella, basil",
     price: "£15",
-    image: "https://images.unsplash.com/photo-1668236543090-82eba5ee5976?w=600&q=85&auto=format",
+    image: "/images/dish-5.jpg",
     tag: "Signature",
   },
   {
@@ -57,7 +57,7 @@ const dishes = [
     name: "Lasagne della Nonna",
     description: "Slow-braised beef ragù, béchamel, aged Parmigiano, egg pasta sheets",
     price: "£18",
-    image: "https://images.unsplash.com/photo-1574894709920-11b28e7367e3?w=600&q=85&auto=format",
+    image: "/images/dish-6.jpg",
     tag: "House Special",
   },
 ];

@@ -29,7 +29,7 @@ export default function Hero() {
       {/* Background image with parallax */}
       <div ref={heroRef} className="absolute inset-0 scale-110">
         <Image
-          src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1920&q=85&auto=format"
+          src="/images/hero-bg.jpg"
           alt="Andromeda Restaurant — Italian cuisine"
           fill
           priority
