@@ -32,9 +32,9 @@
   "About": {
     "eyebrow": "Notre Histoire",
     "title": {
-      "line1": "Une Passion pour la",
-      "emphasis": "Véritable",
-      "line2": "Cuisine Italienne"
+      "line1": "Cuisine Italienne",
+      "emphasis": "Authentique",
+      "line2": ""
     },
     "p1": "Chez Andromeda, nous apportons l’authentique cuisine italienne à Londres à travers des pizzas artisanales, des pâtes fraîches et des recettes traditionnelles préparées avec passion. Chaque plat raconte l’histoire du riche patrimoine culinaire italien.",
     "p2": "Nos chefs sélectionnent les meilleurs ingrédients directement auprès de producteurs italiens — tomates San Marzano, farine 00, Parmigiano-Reggiano affiné — afin de créer des plats qui vous transportent au cœur des rues de Naples et de Rome.",
@@ -134,8 +134,8 @@
         "caption": "Gnocchi"
       },
       "4": {
-        "alt": "Lasagnes italiennes authentiques",
-        "caption": "Lasagnes"
+        "alt": "Café italien authentique",
+        "caption": "Café"
       },
       "5": {
         "alt": "Ambiance élégante d’un restaurant italien",
