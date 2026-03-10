@@ -22,9 +22,9 @@ const config: Config = {
         "gold-light": "#d4a574",
       },
       fontFamily: {
-        "serif": ["Cormorant Garamond", "Georgia", "serif"],
-        "sans": ["DM Sans", "Helvetica Neue", "sans-serif"],
-        "display": ["Cormorant", "Georgia", "serif"],
+        serif: ["var(--font-serif)", "Georgia", "serif"],
+        sans: ["var(--font-sans)", "ui-sans-serif", "system-ui", "sans-serif"],
+        display: ["var(--font-display)", "Georgia", "serif"],
       },
       letterSpacing: {
         "widest2": "0.3em",
