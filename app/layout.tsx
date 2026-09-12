@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Cormorant, Cormorant_Garamond, DM_Sans } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
 const fontSans = DM_Sans({
@@ -48,7 +49,10 @@ export default function RootLayout({
       lang="en"
       className={`scroll-smooth ${fontSans.variable} ${fontSerif.variable} ${fontDisplay.variable}`}
     >
-      <body className="grain-overlay">{children}</body>
+      <body className="grain-overlay">
+        {children}
+        <Analytics />
+      </body>
     </html>
   );
 }
