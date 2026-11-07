@@ -35,6 +35,20 @@ export const metadata: Metadata = {
     title: "Andromeda — Authentic Italian Restaurant London",
     description: "Handcrafted pizzas, fresh pasta, and traditional Italian recipes in the heart of London.",
     type: "website",
+    images: [
+      {
+        url: "/images/og-image.webp",
+        width: 1200,
+        height: 630,
+        alt: "Andromeda — Authentic Italian Restaurant London",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Andromeda — Authentic Italian Restaurant London",
+    description: "Handcrafted pizzas, fresh pasta, and traditional Italian recipes in the heart of London.",
+    images: ["/images/og-image.webp"],
   },
 };
 
