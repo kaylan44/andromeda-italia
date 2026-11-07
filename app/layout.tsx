@@ -28,6 +28,10 @@ const fontDisplay = Cormorant({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_SITE_URL ||
+    (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "http://localhost:3000")
+  ),
   title: "Andromeda — Authentic Italian Restaurant London",
   description:
     "Experience authentic Italian cuisine at Andromeda, London. Handcrafted pizzas, fresh pasta, and traditional recipes made with passion.",
@@ -36,6 +40,20 @@ export const metadata: Metadata = {
     title: "Andromeda — Authentic Italian Restaurant London",
     description: "Handcrafted pizzas, fresh pasta, and traditional Italian recipes in the heart of London.",
     type: "website",
+    images: [
+      {
+        url: "/images/og-image.webp",
+        width: 1200,
+        height: 630,
+        alt: "Andromeda — Authentic Italian Restaurant London",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Andromeda — Authentic Italian Restaurant London",
+    description: "Handcrafted pizzas, fresh pasta, and traditional Italian recipes in the heart of London.",
+    images: ["/images/og-image.webp"],
   },
 };
 
